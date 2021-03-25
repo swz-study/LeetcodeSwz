@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isSymmetric(TreeNode* root) {
+    bool isSymmetric(TreeNode* root){
         return judgeroot(root->left,root->right);
     }
     bool judgeroot(TreeNode* left1,TreeNode* right1){
