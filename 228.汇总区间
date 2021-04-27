@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<string> summaryRanges(vector<int>& nums) {
+        vector<string> ret;
+        int i = 0;
+        int n = nums.size();
+        while(i<n){
+            int low = i++;
+            while(i<n&& nums[i] == nums[i-1] + 1)
+                i++;
+            int r = i-1;
+            string temp = to_string(nums[low]);
+            ret.push_back(low==r?temp:temp+"->"+to_string(nums[r]));
+        }
+        return ret;
+    }
+};
